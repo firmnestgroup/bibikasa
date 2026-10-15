@@ -256,11 +256,11 @@ var Q=new URLSearchParams(location.search);
 var DEMO=Q.has('demo');
 /* deck preview only: simulate a home-indicator inset where env() is unavailable */
 if(/^\d+$/.test(Q.get('sab')||''))document.documentElement.style.setProperty('--sim-sab',Q.get('sab')+'px');
-var PAGES=[['balances','Balances'],['business','Business'],['personal','Personal'],['property','Property'],['statements','Statements'],['transactions','Transactions']];
+var PAGES=[['balances','Balances'],['business','Business'],['personal','Personal'],['property','Poland & Portugal'],['statements','Statements'],['transactions','Transactions']];
 var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 var MONTH_FULL=['January','February','March','April','May','June','July','August','September','October','November','December'];
 var GROUPS=['Cash','Investments','Crypto','Private'];
-var SCOPES={business:'Business',personal:'Personal',transfer:'Transfer',property:'Property',tax:'Tax',investment:'Investment',question:'Waiting on you'};
+var SCOPES={business:'Business',personal:'Personal',transfer:'Transfer',property:'Poland & Portugal',tax:'Tax',investment:'Investment',question:'Waiting on you'};
 var ANSWERS=[['Business income','business'],['Business cost','business'],['Personal','personal'],['Transfer between my accounts','transfer'],['Investment','investment'],['Not sure','question']];
 var INC_ORDER=['Stripe revenue','Workshops','Other income'];
 var COST_ORDER=['Commissions','Contractors','Marketing','Software','Admin','Design','Travel','Professional fees','Bank charges','Other costs'];
@@ -446,7 +446,7 @@ function pProperty(){
   var pick=function(l,m){return m==='YTD'?l:l.filter(function(t){return t._m===m})};
   var lab=function(m){return m==='YTD'?'Year to date':mLong(m)};
   PROP={};['Poland','Portugal'].forEach(function(c){var ls={};propTx(c).forEach(function(t){ls[t.category]=1});var lines=Object.keys(ls).sort(function(a,b){var ia=PROP_ORDER.indexOf(a),ib=PROP_ORDER.indexOf(b);ia=ia<0?99:ia;ib=ib<0?99:ib;return ia-ib||a.localeCompare(b)});if(lines.length)PROP[c]={ccy:c==='Poland'?'PLN':'EUR',lines:lines}});
-  var out=pageHead('Poland and Portugal','Property');
+  var out=pageHead('Rents, Unitube and costs','Poland & Portugal');
   var usdRows='',allProp=[];
   Object.keys(PROP).forEach(function(c){
     var cfg=PROP[c],rows='',all=[];
