@@ -241,46 +241,57 @@ select:focus,.input:focus{outline:1px solid var(--kasa-gilt);outline-offset:-1px
 
 /* investments */
 .pos{color:var(--kasa-ink)}.neg{color:var(--kasa-clay)}
-.k.inv td.spk,.k.inv th.spk{width:76px;min-width:76px;padding-right:0}
-.sp{width:60px;height:18px;display:block;margin-left:auto}
-.sp path{fill:none;stroke:var(--kasa-ink-2);stroke-width:1.25;stroke-linejoin:round;stroke-linecap:round}
-.ch-read{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:baseline;font-size:12.5px;color:var(--kasa-ink-2);margin:0 0 10px;min-height:20px}
-.ch-read b{font-weight:500;color:var(--kasa-ink)}
+.kpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px 20px;border-top:1px solid var(--kasa-sand);padding:14px 0 18px;font-variant-numeric:tabular-nums lining-nums}
+.kpi span{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--kasa-ink-3);font-weight:500;margin-bottom:5px}
+.kpi b{display:block;font-size:17px;line-height:22px;font-weight:500;color:var(--kasa-ink)}
+.kpi b.lt{font-weight:400}.kpi b.neg{color:var(--kasa-clay)}.kpi b.soft{color:var(--kasa-ink-3)}.kpi b.wait{color:var(--kasa-clay);font-size:13.5px}
+.kpi em{display:block;font-style:normal;font-size:11.5px;color:var(--kasa-ink-3);margin-top:2px}
+.kpi.in{border-top:0;padding-top:16px}
+.k.inv td{height:auto;padding-top:7px;padding-bottom:7px;vertical-align:top;line-height:18px}
+.k.inv td small{display:block;font-size:11px;line-height:14px;color:var(--kasa-ink-3)}
+.k.inv td small.neg,.k.inv td.neg small{color:var(--kasa-clay)}
+.k.inv td small.ad{color:var(--kasa-gilt)}
+.k.inv tr.fold{cursor:pointer}.k.inv tr.fold td{background:var(--kasa-linen)}
+.k.inv tr.kid td.first{padding-left:12px}
+.k.inv tr.tot td{height:auto}
+.ch-read{display:flex;flex-wrap:wrap;gap:4px 18px;align-items:center;font-size:11.5px;color:var(--kasa-ink-2);margin:0 0 10px}
 .ch-read span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}
-.ch-read .pos{color:var(--kasa-ink);font-weight:500}.ch-read .neg{color:var(--kasa-clay);font-weight:500}
 .key{display:inline-block;width:14px;height:0;border-top:2px solid var(--kasa-ink);flex:none}
 .key.k-base{border-top:1.5px dashed var(--kasa-ink-3)}
-.ch{position:relative;height:220px;padding:0 14px 24px 48px;border-top:1px solid var(--kasa-sand);border-bottom:1px solid var(--kasa-stone)}
-.ch-y{position:absolute;left:0;right:0;top:12px;bottom:36px;pointer-events:none}
+.key.k-pace{border-top:2px dotted var(--kasa-gilt)}
+.key.k-dot{width:8px;height:8px;border:0;border-radius:50%;background:var(--kasa-gilt)}
+.ch{position:relative;height:220px;border-top:1px solid var(--kasa-sand);border-bottom:1px solid var(--kasa-stone)}
+.ch-y{position:absolute;left:0;right:0;top:14px;bottom:38px;pointer-events:none}
 .ch-t{position:absolute;left:0;right:0;border-top:1px solid var(--kasa-stone);height:0}
 .ch-t span{position:absolute;left:0;top:-8px;font-size:10.5px;color:var(--kasa-ink-3);background:var(--kasa-paper);padding-right:6px;font-variant-numeric:tabular-nums}
-.ch-plot{position:absolute;left:48px;right:14px;top:12px;bottom:36px}
+.ch-plot{position:absolute;left:52px;right:16px;top:14px;bottom:38px}
 .ch-plot svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .ch-plot path{fill:none;vector-effect:non-scaling-stroke}
 .c-val{stroke:var(--kasa-ink);stroke-width:2;stroke-linejoin:round}
 .c-base{stroke:var(--kasa-ink-3);stroke-width:1.5;stroke-dasharray:4 4}
+.c-pace{stroke:var(--kasa-gilt);stroke-width:2;stroke-dasharray:1 5;stroke-linecap:round}
 .ch-plot path.c-gap{fill:var(--kasa-gilt-wash);stroke:none}
-.ch-hit{position:absolute;top:0;bottom:0;width:34px;margin-left:-17px;padding:0}
-.ch-hit::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1px solid transparent}
-.ch-hit.on::before,.ch-hit:hover::before{border-left-color:var(--kasa-sand)}
-.ch-hit i{position:absolute;left:50%;width:9px;height:9px;margin:-4.5px 0 0 -4.5px;border-radius:50%;background:var(--kasa-ink);border:2px solid var(--kasa-paper);opacity:0}
-.ch-hit.on i,.ch-hit:hover i{opacity:1}
-.ch-x{position:absolute;left:48px;right:14px;bottom:6px;height:16px}
+.ch-now{position:absolute;top:0;bottom:0;border-left:1px dashed var(--kasa-sand)}
+.ch-add{position:absolute;bottom:-1px;transform:translateY(50%);border-radius:50%;background:var(--kasa-gilt);border:1.5px solid var(--kasa-paper);box-sizing:content-box}
+.ch-add.out{background:var(--kasa-clay)}
+.ch-x{position:absolute;left:52px;right:16px;bottom:8px;height:16px}
 .ch-x span{position:absolute;transform:translateX(-50%);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--kasa-ink-3)}
+.dn{display:grid;grid-template-columns:minmax(150px,200px) 1fr;gap:28px;align-items:center;border-top:1px solid var(--kasa-sand);padding-top:18px}
+.dn-c{position:relative;width:100%;max-width:200px;justify-self:center}
+.dn-c svg{display:block;width:100%;height:auto}
+.dn-m{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.dn-m span{font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--kasa-ink-3)}
+.dn-m b{font-size:17px;font-weight:500;margin-top:2px}
+.dn-r{display:grid;grid-template-columns:10px 1fr 52px 84px;gap:10px;align-items:center;min-height:32px;border-bottom:1px solid var(--kasa-stone);font-size:13px;line-height:17px;padding:4px 0}
+.dn-r.tap{cursor:pointer}.dn-r.tap:hover{background:var(--kasa-gilt-wash)}
+.dn-r i{width:10px;height:10px;display:block}
+.dn-r .num{text-align:right}
+.sh-b.fund h2{margin-top:24px}
+.sh-b.fund .ch{height:180px}
+.fund-tx{border-top:1px solid var(--kasa-sand)}
+.fund-tx div.dr{cursor:default}
+@media (max-width:640px){.dn{grid-template-columns:1fr;gap:16px}.dn-r{grid-template-columns:10px 1fr 48px}.dn-r span:last-child{display:none}.kpi{grid-template-columns:1fr 1fr}.kpi b{font-size:15px}}
 @media (max-width:480px){.tabs button{font-size:10.5px;letter-spacing:-.01em}.k.inv td.first{min-width:118px;max-width:132px}}
-.gbs{border-top:1px solid var(--kasa-sand)}
-.gb{display:grid;grid-template-columns:minmax(96px,34%) 1fr 92px;gap:10px;align-items:center;min-height:var(--row);border-bottom:1px solid var(--kasa-stone);cursor:pointer}
-.gb:hover{background:var(--kasa-gilt-wash)}
-.gb-n{font-size:13px;line-height:17px;padding:5px 0}
-.gb-t{position:relative;height:12px}
-.gb-t::before{content:"";position:absolute;left:50%;top:-6px;bottom:-6px;border-left:1px solid var(--kasa-sand)}
-.gb-t i{position:absolute;top:0;bottom:0;min-width:2px}
-.gb-t i.unk{background:var(--kasa-sand)!important}
-.key.k-bar{width:12px;height:8px;border:0;background:var(--kasa-ink)}.key.k-bar.unk{background:var(--kasa-sand)}
-.k td.wait{font-size:11.5px}
-.gb-t i.pos{background:var(--kasa-ink)}.gb-t i.neg{background:var(--kasa-clay)}
-.gb-v{text-align:right;font-size:13.5px;line-height:16px}
-.gb-v small{display:block;font-size:11px;color:var(--kasa-ink-3)}
 </style>
 </head>
 <body>
@@ -293,7 +304,7 @@ select:focus,.input:focus{outline:1px solid var(--kasa-gilt);outline-offset:-1px
 (function(){
 'use strict';
 /* ---------- config ---------- */
-var CONFIG={pin:'5272',deviceKey:'kasa.device.v1',answersKey:'kasa.answers.v1',cacheKey:'kasa.cache.v1',dataUrl:'https://script.google.com/macros/s/AKfycbxxinCFOL4GC-c4qfLbNeszzqn4wCxqGZRalzAypKYcSPOPPpKl2EEnF1KxouVyxOdK0g/exec'};
+var CONFIG={lockAfterMin:15,seenKey:'kasa.seen.v1',pin:'5272',deviceKey:'kasa.device.v1',answersKey:'kasa.answers.v1',cacheKey:'kasa.cache.v1',dataUrl:'https://script.google.com/macros/s/AKfycbxxinCFOL4GC-c4qfLbNeszzqn4wCxqGZRalzAypKYcSPOPPpKl2EEnF1KxouVyxOdK0g/exec'};
 if(location.search.indexOf('local=1')>=0)CONFIG.dataUrl='data.json';
 var Q=new URLSearchParams(location.search);
 var DEMO=Q.has('demo');
@@ -525,100 +536,122 @@ function pProperty(){
 
 /* ---------- Investments ---------- */
 var INV_FEED=[{re:/gbm/i,code:'640'}];   /* money moved into a holding that Kasa only knows by its month-end value */
+var INV_COL=['#172A3A','#7A6B47','#4B6478','#B39E6B','#8F4A43','#6E7F8C','#CDBE96','#B88A84','#9AA7B1','#5D5236','#D9CFC0','#3D4A55','#A9B3BA'];
+var INV=null;
 function invData(){
-  var hs=D.accounts.filter(function(a){return a.group!=='Cash'});
-  var rows=hs.map(function(a){
-    var ks=MONTHS.filter(function(m){return bal(a,m)!=null});
-    if(!ks.length)return null;
-    var k0=ks[0],k1=ks[ks.length-1],r=fx(a.ccy),v0=bal(a,k0),v1=bal(a,k1);
-    var flows=[],known=false;
-    if(a.source==='xero'){known=true;flows=TX.filter(function(t){return t.accountId===a.id&&t.code!=='270'&&t.code!=='275'}).map(function(t){return {m:t._m,v:t.amount,t:t}})}
-    else if(a.added&&Object.keys(a.added).length){known=true;Object.keys(a.added).forEach(function(m){if(a.added[m])flows.push({m:m,v:+a.added[m],t:null})})}
-    else INV_FEED.forEach(function(f){if(f.re.test(a.kasaName)){known=true;TX.forEach(function(t){if(t.code===f.code)flows.push({m:t._m,v:-t.amount*fx(t.ccy)/(r||1),t:t})})}});
+  var n=MONTHS.length;
+  var rows=D.accounts.filter(function(a){return a.group!=='Cash'}).map(function(a){
+    var ks=MONTHS.filter(function(m){return bal(a,m)!=null});if(!ks.length)return null;
+    var k0=ks[0],k1=ks[ks.length-1],r=fx(a.ccy),flows=[],known=false,txs=[];
+    if(a.source==='xero'){known=true;txs=TX.filter(function(t){return t.accountId===a.id});flows=txs.filter(function(t){return t.code!=='270'&&t.code!=='275'}).map(function(t){return {m:t._m,v:t.amount*r,t:t}})}
+    else if(a.added&&Object.keys(a.added).length){known=true;Object.keys(a.added).forEach(function(m){if(a.added[m])flows.push({m:m,v:+a.added[m]*r,t:null})})}
+    else INV_FEED.forEach(function(f){if(f.re.test(a.kasaName)){known=true;TX.forEach(function(t){if(t.code===f.code){flows.push({m:t._m,v:-t.amount*fx(t.ccy),t:t});txs.push(t)}})}});
     flows=flows.filter(function(f){return f.m>k0&&f.m<=k1});
-    var added=flows.reduce(function(x,f){return x+f.v},0);
-    var growth=v1-v0-added,base=v0+added;
-    var flat=ks.every(function(m){return bal(a,m)===v0});
-    var still=flat&&!flows.length;                       /* held at cost: nothing to measure */
-    if(still)known=true;
-    var val=MONTHS.map(function(m){var last=null;ks.forEach(function(k){if(k<=m)last=bal(a,k)});return (last||0)*r});
-    var cum=MONTHS.map(function(m){return flows.reduce(function(x,f){return x+(f.m<=m?f.v:0)},0)*r});
-    return {a:a,k0:k0,k1:k1,v0:v0*r,v1:v1*r,change:(v1-v0)*r,chgPct:v0>0?(v1-v0)/v0*100:null,added:added*r,growth:growth*r,pct:base>0?growth/base*100:null,
-      still:still,known:known,empty:!v0&&!v1,hasFlow:flows.length>0,flowTx:flows.map(function(f){return f.t}).filter(Boolean),val:val,cum:cum};
-  }).filter(Boolean);
-  var tot=function(l){var o={v0:0,v1:0,change:0,added:0,growth:0,allKnown:true,val:MONTHS.map(function(){return 0}),cum:MONTHS.map(function(){return 0})};
-    l.forEach(function(x){o.v0+=x.v0;o.v1+=x.v1;o.change+=x.change;if(!x.known)o.allKnown=false;else{o.added+=x.added;o.growth+=x.growth}x.val.forEach(function(v,i){o.val[i]+=v});x.cum.forEach(function(v,i){if(x.known)o.cum[i]+=v})});
-    o.pct=(o.allKnown&&(o.v0+o.added)>0)?o.growth/(o.v0+o.added)*100:null;return o};
-  return {rows:rows,tot:tot,all:tot(rows)};
+    var val=MONTHS.map(function(m){var last=null;ks.forEach(function(k){if(k<=m)last=bal(a,k)});return last==null?null:last*r});
+    var flow=MONTHS.map(function(m){return flows.reduce(function(x,f){return x+(f.m===m?f.v:0)},0)});
+    var gM=MONTHS.map(function(m,i){return i&&val[i]!=null&&val[i-1]!=null?val[i]-val[i-1]-flow[i]:null});
+    var pM=MONTHS.map(function(m,i){var d=i&&val[i-1]!=null?val[i-1]+flow[i]:0;return gM[i]!=null&&d>0?gM[i]/d*100:null});
+    var v0=bal(a,k0)*r,v1=bal(a,k1)*r,added=flow.reduce(function(x,v){return x+v},0),growth=v1-v0-added;
+    var flat=ks.every(function(m){return bal(a,m)===bal(a,k0)}),still=flat&&!flows.length;
+    var chg=k0;ks.forEach(function(k,i){if(i&&bal(a,k)!==bal(a,ks[i-1]))chg=k});
+    return {a:a,k0:k0,k1:k1,v0:v0,v1:v1,added:added,growth:growth,pct:(v0+added)>0?growth/(v0+added)*100:null,val:val,flow:flow,gM:gM,pM:pM,
+      still:still,known:known||still,empty:!v0&&!v1,stale:!still&&chg<MONTHS[n-1]?chg:null,txs:txs.filter(function(t){return t._m<=k1}),told:(a.source!=='xero'&&a.added)?a.added:null};
+  }).filter(function(x){return x&&!x.empty});
+  var tot=function(l){var o={v0:0,v1:0,added:0,growth:0,val:MONTHS.map(function(){return 0}),flow:MONTHS.map(function(){return 0}),gM:MONTHS.map(function(){return 0})};
+    l.forEach(function(x){o.v0+=x.v0;o.v1+=x.v1;o.added+=x.added;o.growth+=x.growth;MONTHS.forEach(function(m,i){o.val[i]+=x.val[i]||0;o.flow[i]+=x.flow[i];o.gM[i]+=x.gM[i]||0})});
+    o.pM=MONTHS.map(function(m,i){var d=i?o.val[i-1]+o.flow[i]:0;return i&&d>0?o.gM[i]/d*100:null});
+    o.pct=(o.v0+o.added)>0?o.growth/(o.v0+o.added)*100:null;return o};
+  return {rows:rows,tot:tot,all:tot(rows),unknown:rows.filter(function(x){return !x.known})};
 }
 function fPct1(n){if(n==null||!isFinite(n))return '–';var r=Math.round(n*10)/10;if(r===0)return '0.0%';var b=Math.abs(r).toFixed(1)+'%';return r<0?'('+b+')':'+'+b}
 function fSign(n){var r=Math.round(n);if(!r)return '–';return r<0?fUSD(r):'+'+fUSD(r)}
 function fM(n){var a=Math.abs(n);return a>=1e6?(n/1e6).toFixed(2)+'m':a>=1e3?Math.round(n/1e3)+'k':String(Math.round(n))}
-function invReadout(I,i){
-  var m=MONTHS[i],v=I.all.val[i],b=I.all.v0+I.all.cum[i],g=v-b;
-  return '<b>'+mEnd(m)+'</b><span><i class="key k-val"></i>Value '+fUSD(v,{dollar:true})+'</span><span><i class="key k-base"></i>January value plus money added '+(I.all.allKnown?'':'so far ')+fUSD(b,{dollar:true})+'</span><span class="'+(g<0?'neg':'pos')+'">'+(I.all.allKnown?'Growth ':'Difference ')+fSign(g)+'</span>';
+function gcls(v){return Math.round(v*10)<0?'neg':''}
+/* simple run-rate: average monthly growth so far, carried to 31 December with no new money */
+function invPace(o){
+  var n=MONTHS.length,last=MONTHS[n-1],left=12-(+last.slice(5,7));if(n<4||left<1||o.pct==null)return null;
+  var per=o.growth/(n-1);return {left:left,per:per,end:o.v1+per*left,year:o.pct/(n-1)*12};
 }
-var INV=null;
-function pInvestments(){
-  var I=INV=invData(),first=MONTHS[0],last=MONTHS[MONTHS.length-1],n=MONTHS.length;
-  var cell=function(x,v,cls){return '<td class="num tap'+(cls?' '+cls:'')+'" data-d="'+reg(function(){drillAcc(x.a,x.k1)})+'">'+v+'</td>'};
-  var gcls=function(v){return Math.round(v)<0?'neg':Math.round(v)>0?'pos':''};
-  var rows='';
-  var dash='<td class="num muted">–</td>';
-  var grow=function(t){return t.allKnown&&Math.round(t.growth)?'<td class="num '+gcls(t.growth)+'">'+fSign(t.growth)+'</td><td class="num '+gcls(t.growth)+'">'+fPct1(t.pct)+'</td>':dash+dash};
-  var groups=GROUPS.filter(function(g){return g!=='Cash'}).concat(I.rows.map(function(x){return x.a.group}).filter(function(g,i,arr){return GROUPS.indexOf(g)<0&&arr.indexOf(g)===i}));
-  groups.forEach(function(g){
-    var l=I.rows.filter(function(x){return x.a.group===g});if(!l.length)return;var t=I.tot(l);
-    rows+='<tr class="grp"><td>'+g+'</td><td class="num">'+fUSD(t.v1)+'</td><td class="num">'+fSign(t.change)+'</td><td class="num">'+fSign(t.added)+'</td>'+grow(t)+'<td class="num">'+fUSD(t.v0)+'</td><td></td></tr>';
-    l.forEach(function(x){
-      rows+='<tr><td class="first"><button class="an" data-d="'+reg(function(){drillAcc(x.a,x.k1)})+'">'+esc(x.a.kasaName)+'</button>'+
-        (x.a.source==='manual'?'<span class="tag">'+(x.still&&!x.empty?'held at cost':'manual')+' · as of '+mEnd(x.k1,true)+'</span>':'')+'</td>'+
-        cell(x,fUSD(x.v1))+
-        (x.still?dash:cell(x,fSign(x.change)))+
-        (!x.known?'<td class="num wait">not given yet</td>':x.hasFlow?(x.flowTx.length?'<td class="num tap" data-d="'+reg(function(){drill('Money added · '+x.a.kasaName,'Since '+mEnd(x.k0,true),x.flowTx)})+'">'+fSign(x.added)+'</td>':'<td class="num">'+fSign(x.added)+'</td>'):(x.still?dash:'<td class="num">0</td>'))+
-        (x.still||!x.known?dash+dash:cell(x,fSign(x.growth),gcls(x.growth))+cell(x,fPct1(x.pct),gcls(x.growth)))+
-        cell(x,fUSD(x.v0))+
-        '<td class="spk">'+(x.still?'':spark(x.val))+'</td></tr>';
-    });
-  });
-  var A=I.all;
-  rows+='<tr class="tot"><td class="first">Total</td><td class="num">'+fUSD(A.v1)+'</td><td class="num">'+fSign(A.change)+'</td><td class="num">'+fSign(A.added)+'</td>'+grow(A)+'<td class="num">'+fUSD(A.v0)+'</td><td class="spk">'+spark(A.val)+'</td></tr>';
-  /* chart 1: value against January value plus money added */
-  var base=A.cum.map(function(c){return A.v0+c});
-  var lo=Math.min.apply(null,A.val.concat(base)),hi=Math.max.apply(null,A.val.concat(base)),pad=(hi-lo)*0.12||1;lo-=pad;hi+=pad;
-  var X=function(i){return n>1?i/(n-1)*100:50},Y=function(v){return 100-(v-lo)/(hi-lo)*100};
-  var path=function(arr){return arr.map(function(v,i){return (i?'L':'M')+X(i).toFixed(2)+' '+Y(v).toFixed(2)}).join(' ')};
-  var gap='M'+A.val.map(function(v,i){return X(i).toFixed(2)+' '+Y(v).toFixed(2)}).join(' L')+' L'+base.slice().reverse().map(function(v,j){var i=n-1-j;return X(i).toFixed(2)+' '+Y(v).toFixed(2)}).join(' L')+' Z';
+function invChart(o,pace,id){
+  var n=MONTHS.length,N=n+(pace?pace.left:0),cum=0;
+  var base=MONTHS.map(function(m,i){cum+=o.flow[i];return o.v0+cum}),val=o.val.map(function(v){return v||0});
+  var proj=pace?Array.apply(null,Array(pace.left)).map(function(_,k){return o.v1+pace.per*(k+1)}):[];
+  var all=val.concat(base,proj),lo=Math.min.apply(null,all),hi=Math.max.apply(null,all),pad=(hi-lo)*0.12||Math.max(hi*0.02,1);lo-=pad;hi+=pad;
+  var X=function(i){return N>1?i/(N-1)*100:50},Y=function(v){return 100-(v-lo)/(hi-lo)*100};
+  var pth=function(arr,off){return arr.map(function(v,i){return (i?'L':'M')+X(i+(off||0)).toFixed(2)+' '+Y(v).toFixed(2)}).join(' ')};
+  var gap='M'+val.map(function(v,i){return X(i).toFixed(2)+' '+Y(v).toFixed(2)}).join(' L')+' L'+base.slice().reverse().map(function(v,j){var i=n-1-j;return X(i).toFixed(2)+' '+Y(v).toFixed(2)}).join(' L')+' Z';
   var ticks=[0,1,2].map(function(k){var v=lo+pad+(hi-lo-2*pad)*k/2;return '<div class="ch-t" style="top:'+Y(v).toFixed(2)+'%"><span>$'+fM(v)+'</span></div>'}).join('');
-  var hits=MONTHS.map(function(m,i){return '<button class="ch-hit'+(i===n-1?' on':'')+'" data-inv="'+i+'" style="left:'+X(i).toFixed(2)+'%" aria-label="'+mLong(m)+'"><i style="top:'+Y(A.val[i]).toFixed(2)+'%"></i></button>'}).join('');
-  var xl=MONTHS.map(function(m,i){return '<span style="left:'+X(i).toFixed(2)+'%">'+mLabel(m)+'</span>'}).join('');
-  var chart='<div class="ch-read" id="inv-read">'+invReadout(I,n-1)+'</div>'+
-    '<div class="ch"><div class="ch-y">'+ticks+'</div><div class="ch-plot">'+
-    '<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="c-gap" d="'+gap+'"/><path class="c-base" d="'+path(base)+'"/><path class="c-val" d="'+path(A.val)+'"/></svg>'+hits+'</div><div class="ch-x">'+xl+'</div></div>';
-  /* chart 2: growth by holding */
-  var gl=I.rows.filter(function(x){return !x.still&&!x.empty}).map(function(x){return {x:x,p:x.known?x.pct:x.chgPct,v:x.known?x.growth:x.change}}).filter(function(o){return o.p!=null}).sort(function(a,b){return b.p-a.p});
-  var mx=Math.max.apply(null,gl.map(function(o){return Math.abs(o.p)}).concat([1]));
-  var anyUnk=gl.some(function(o){return !o.x.known});
-  var bars=gl.map(function(o){var x=o.x,w=Math.abs(o.p)/mx*50,neg=o.p<0;
-    return '<div class="gb" data-d="'+reg(function(){drillAcc(x.a,x.k1)})+'"><div class="gb-n">'+esc(x.a.kasaName)+(x.known?'':'<span class="tag">may include money you added</span>')+'</div><div class="gb-t"><i class="'+(neg?'neg':'pos')+(x.known?'':' unk')+'" style="'+(neg?'right:50%':'left:50%')+';width:'+w.toFixed(2)+'%"></i></div><div class="gb-v num '+(neg?'neg':'')+'">'+fPct1(o.p)+'<small>'+fSign(o.v)+'</small></div></div>'}).join('');
-  var gkey='<div class="ch-read"><span><i class="key k-bar"></i>Growth, money added taken out</span>'+(anyUnk?'<span><i class="key k-bar unk"></i>Change in value, money added not given yet</span>':'')+'</div>';
-  return pageHead('Funds, crypto and private holdings','Investments')+
-    '<div class="tw"><table class="k sticky inv"><thead><tr><th>Holding</th><th>'+mEnd(last,true)+'</th><th>Change</th><th>Money added</th><th>Growth</th><th>Growth %</th><th>'+mEnd(first,true)+'</th><th class="spk">Trend</th></tr></thead><tbody>'+rows+'</tbody></table></div>'+
-    '<p class="note" style="margin-top:12px">USD. Change is the move in value since '+mEnd(first,true)+'. Growth is that change after taking out money you added or withdrew, so new money is never counted as growth. Where your money-added figures are not given yet, growth stays blank.</p>'+
-    '<h2>Value against money put in</h2>'+chart+
-    (bars?'<h2>Since '+mEnd(first,true)+', by holding</h2>'+gkey+'<div class="gbs">'+bars+'</div>':'');
+  var mxf=Math.max.apply(null,o.flow.map(Math.abs).concat([1]));
+  var dots=o.flow.map(function(f,i){if(!Math.round(f))return '';var d=6+Math.round(Math.abs(f)/mxf*8);return '<i class="ch-add'+(f<0?' out':'')+'" title="'+(f<0?'Withdrawn ':'Added ')+fUSD(Math.abs(f),{dollar:true})+'" style="left:'+X(i).toFixed(2)+'%;width:'+d+'px;height:'+d+'px;margin-left:-'+d/2+'px"></i>'}).join('');
+  var mName=function(i){var mo=(+MONTHS[0].slice(5,7)-1+i)%12;return MON[mo]};
+  var step=N>9?2:1,xl='';for(var i=0;i<N;i++){if((i%step===0&&(step===1||i<N-2))||i===N-1||i===n-1)xl+='<span style="left:'+X(i).toFixed(2)+'%">'+mName(i)+'</span>'}
+  var legend='<div class="ch-read"><span><i class="key k-val"></i>Value</span><span><i class="key k-base"></i>Start plus money put in</span>'+(dots?'<span><i class="key k-dot"></i>Month money was added</span>':'')+(pace?'<span><i class="key k-pace"></i>At this pace</span>':'')+'</div>';
+  return legend+'<div class="ch"'+(id?' id="'+id+'"':'')+'><div class="ch-y">'+ticks+'</div><div class="ch-plot">'+
+    '<svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path class="c-gap" d="'+gap+'"/><path class="c-base" d="'+pth(base)+'"/><path class="c-val" d="'+pth(val)+'"/>'+
+    (pace?'<path class="c-pace" d="'+pth([o.v1].concat(proj),n-1)+'"/>':'')+'</svg>'+
+    (pace?'<i class="ch-now" style="left:'+X(n-1).toFixed(2)+'%"></i>':'')+dots+'</div><div class="ch-x">'+xl+'</div></div>';
 }
-function spark(arr){
-  var lo=Math.min.apply(null,arr),hi=Math.max.apply(null,arr);if(hi===lo)return '<svg class="sp" viewBox="0 0 60 18" aria-hidden="true"><path d="M1 9 L59 9"/></svg>';
-  var n=arr.length,d=arr.map(function(v,i){return (i?'L':'M')+(1+i/(n-1)*58).toFixed(1)+' '+(16-(v-lo)/(hi-lo)*14).toFixed(1)}).join(' ');
-  return '<svg class="sp" viewBox="0 0 60 18" aria-hidden="true"><path d="'+d+'"/></svg>';
+function invDonut(I){
+  var T=I.all.v1||1,l=I.rows.slice().sort(function(a,b){return b.v1-a.v1});
+  var big=l.filter(function(x){return x.v1/T>=0.01}),small=l.filter(function(x){return x.v1/T<0.01});
+  var items=big.map(function(x){return {n:x.a.kasaName,v:x.v1,x:x}});
+  if(small.length)items.push({n:small.map(function(x){return x.a.kasaName.replace(/ (USD|EUR|PLN|MXN|GBP)$/,'')}).join(', '),v:small.reduce(function(s,x){return s+x.v1},0),x:small.length===1?small[0]:null});
+  var off=0,arcs='',leg='';
+  items.forEach(function(it,i){var p=it.v/T*100,c=INV_COL[i%INV_COL.length];
+    arcs+='<circle cx="60" cy="60" r="44" pathLength="100" stroke="'+c+'" stroke-dasharray="'+Math.max(p-0.35,0.2).toFixed(2)+' '+(100-Math.max(p-0.35,0.2)).toFixed(2)+'" stroke-dashoffset="'+(-off).toFixed(2)+'"/>';off+=p;
+    leg+='<div class="dn-r'+(it.x?' tap':'')+'"'+(it.x?' data-d="'+reg(function(){openFund(it.x.a.id)})+'"':'')+'><i style="background:'+c+'"></i><span>'+esc(it.n)+'</span><span class="num">'+(Math.round(p*10)/10).toFixed(1)+'%</span><span class="num muted">'+fUSD(it.v)+'</span></div>'});
+  return '<div class="dn"><div class="dn-c"><svg viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke-width="20" transform="rotate(-90 60 60)">'+arcs+'</g></svg><div class="dn-m"><span>Total</span><b>$'+fM(T)+'</b></div></div><div class="dn-l">'+leg+'</div></div>';
 }
-function invPick(i){
-  if(!INV)return;var r=document.getElementById('inv-read');if(r)r.innerHTML=invReadout(INV,i);
-  Array.prototype.forEach.call(document.querySelectorAll('.ch-hit'),function(b){b.classList.toggle('on',+b.dataset.inv===i)});
+function pInvestments(){
+  var I=INV=invData(),first=MONTHS[0],last=MONTHS[MONTHS.length-1],A=I.all,pace=invPace(A);
+  var mcell=function(o,i,x){var v=o.val[i];if(v==null)return '<td class="num muted">–</td>';
+    return '<td class="num mc'+(x?' tap':'')+'"'+(x?' data-d="'+reg(function(){openFund(x.a.id)})+'"':'')+'>'+fUSD(v)+(i&&o.pM[i]!=null&&!(x&&x.still)?'<small class="'+gcls(o.pM[i])+'">'+fPct1(o.pM[i])+'</small>':'')+(Math.round(o.flow[i])?'<small class="ad">'+(o.flow[i]>0?'+':'')+fUSD(o.flow[i])+(o.flow[i]>0?' added':' out')+'</small>':'')+'</td>'};
+  var line=function(x,child){
+    var tag=x.still?'held at cost':x.stale?'<span class="wait">no new figure since '+mEnd(x.stale,true)+'</span>':(x.a.source==='manual'?'your figure':'from statements')+' · '+mEnd(x.k1,true);
+    return '<tr'+(child?' class="kid"':'')+'><td class="first"><button class="an" data-d="'+reg(function(){openFund(x.a.id)})+'">'+esc(x.a.kasaName)+'</button><span class="tag">'+tag+'</span></td>'+
+      '<td class="num tap" data-d="'+reg(function(){openFund(x.a.id)})+'">'+fUSD(x.v1)+'</td>'+
+      '<td class="num tap '+(x.still?'muted':gcls(x.pct||0))+'" data-d="'+reg(function(){openFund(x.a.id)})+'">'+(x.still?'–':fPct1(x.pct)+'<small>'+fSign(x.growth)+'</small>')+'</td>'+
+      MONTHS.map(function(m,i){return mcell(x,i,x)}).join('')+'</tr>'};
+  var rows='',priv=I.rows.filter(function(x){return x.still}),live=I.rows.filter(function(x){return !x.still});
+  GROUPS.filter(function(g){return g!=='Cash'}).concat(live.map(function(x){return x.a.group}).filter(function(g,i,arr){return GROUPS.indexOf(g)<0&&arr.indexOf(g)===i})).forEach(function(g){
+    live.filter(function(x){return x.a.group===g}).forEach(function(x){rows+=line(x)})});
+  if(priv.length){var P=I.tot(priv);
+    rows+='<tr class="fold" data-d="'+reg(function(){S.invOpen=!S.invOpen;render()})+'"><td class="first"><span class="an">Private, at cost</span><span class="tag">'+priv.length+' holdings · '+(S.invOpen?'tap to close':'tap to open')+'</span></td><td class="num">'+fUSD(P.v1)+'</td><td class="num muted">–</td>'+MONTHS.map(function(m,i){return '<td class="num">'+fUSD(P.val[i])+'</td>'}).join('')+'</tr>';
+    if(S.invOpen)priv.forEach(function(x){rows+=line(x,true)})}
+  rows+='<tr class="tot"><td class="first">Total</td><td class="num">'+fUSD(A.v1)+'</td><td class="num '+gcls(A.pct||0)+'">'+fPct1(A.pct)+'<small>'+fSign(A.growth)+'</small></td>'+MONTHS.map(function(m,i){return mcell(A,i,null)}).join('')+'</tr>';
+  var strip='<div class="kpi"><div><span>Value, '+mEnd(last,true)+'</span><b>'+fUSD(A.v1,{dollar:true})+'</b></div>'+
+    '<div><span>Money added since '+mEnd(first,true)+'</span><b class="lt">'+(Math.round(A.added)?(A.added>0?'+':'')+fUSD(A.added,{dollar:true}):'–')+'</b></div>'+
+    '<div><span>Growth since '+mEnd(first,true)+'</span><b class="lt '+gcls(A.growth)+'">'+(A.growth>0?'+':'')+fUSD(A.growth,{dollar:true})+' · '+fPct1(A.pct)+'</b></div>'+
+    (pace?'<div><span>At this pace, 31 Dec</span><b class="lt soft">≈ '+fUSD(Math.round(pace.end/1000)*1000,{dollar:true})+'</b><em>about '+(Math.round(pace.year*10)/10)+'% a year, no new money</em></div>':'')+'</div>';
+  var unk=I.unknown.map(function(x){return x.a.kasaName.replace(/ (USD|EUR|PLN|MXN|GBP)$/,'')});
+  return pageHead('Funds, crypto and private holdings','Investments')+strip+
+    '<div class="tw"><table class="k sticky inv"><thead><tr><th>Holding</th><th>'+mEnd(last,true)+'</th><th>Since '+mLabel(first)+'</th>'+MONTHS.map(function(m){return monthTh(m)}).join('')+'</tr></thead><tbody>'+rows+'</tbody></table></div>'+
+    '<p class="note" style="margin-top:12px">USD. The percentage under each month is growth in that month, after taking out any money you added or withdrew. Tap a holding for its own page.'+(unk.length?' We do not yet have your money-added figures for '+unk.join(', ')+', so their growth assumes none.':'')+'</p>'+
+    '<h2>Value against money put in</h2>'+invChart(A,pace)+
+    '<h2>How it is split</h2>'+invDonut(I);
 }
-document.addEventListener('mouseover',function(e){var t=e.target.closest&&e.target.closest('[data-inv]');if(t)invPick(+t.dataset.inv)});
-document.addEventListener('click',function(e){var t=e.target.closest&&e.target.closest('[data-inv]');if(t)invPick(+t.dataset.inv)});
+function openFund(id){S.stack=[{type:'fund',id:id}];openSheet()}
+function vFund(id){
+  var I=INV||(INV=invData()),x=I.rows.filter(function(r){return r.a.id===id})[0];if(!x)return head('Investments','Not found','')+'</div>';
+  var a=x.a,pace=(x.known&&!x.still&&a.group!=='Crypto'&&x.growth>0)?invPace(x):null;
+  var cell=function(lb,v,sub,cls){return '<div><span>'+lb+'</span><b class="lt '+(cls||'')+'">'+v+'</b>'+(sub?'<em>'+sub+'</em>':'')+'</div>'};
+  var kpi='<div class="kpi in">'+cell('Value, '+mEnd(x.k1,true),fUSD(x.v1,{dollar:true}),a.ccy!=='USD'?fNat(bal(a,x.k1))+' '+a.ccy:'')+cell('Start, '+mEnd(x.k0,true),fUSD(x.v0,{dollar:true}))+
+    cell('Money added',x.still?'–':Math.round(x.added)?(x.added>0?'+':'')+fUSD(x.added,{dollar:true}):(x.known?'0':'not given yet'),'',x.known?'':'wait')+
+    cell('Growth',x.still?'held at cost':(x.growth>0?'+':'')+fUSD(x.growth,{dollar:true})+' · '+fPct1(x.pct),'',x.still?'soft':gcls(x.growth))+
+    (pace?cell('At this pace, 31 Dec','≈ '+fUSD(Math.round(pace.end/1000)*1000,{dollar:true}),'about '+(Math.round(pace.year*10)/10)+'% a year, no new money','soft'):'')+'</div>';
+  var mrows=MONTHS.map(function(m,i){if(x.val[i]==null)return '';
+    return '<tr><td class="l">'+mLong(m)+'</td><td class="num">'+fUSD(x.val[i])+'</td><td class="num">'+(Math.round(x.flow[i])?fSign(x.flow[i]):'–')+'</td><td class="num '+gcls(x.gM[i]||0)+'">'+(i&&x.gM[i]!=null&&!x.still?fSign(x.gM[i]):'–')+'</td><td class="num '+gcls(x.pM[i]||0)+'">'+(i&&!x.still?fPct1(x.pM[i]):'–')+'</td></tr>'}).join('');
+  mrows+='<tr class="tot"><td class="l">Since '+mEnd(x.k0,true)+'</td><td class="num">'+fUSD(x.v1)+'</td><td class="num">'+fSign(x.added)+'</td><td class="num '+gcls(x.growth)+'">'+(x.still?'–':fSign(x.growth))+'</td><td class="num '+gcls(x.growth)+'">'+(x.still?'–':fPct1(x.pct))+'</td></tr>';
+  var tx='';
+  if(x.txs.length)tx=x.txs.slice().reverse().map(function(t){return '<button class="dr" data-tx="'+t.id+'"><span class="dt num">'+dShort(t.date)+'</span><span style="min-width:0"><span class="d1" style="display:block">'+esc(t.contact||t.category)+'</span><span class="d2" style="display:block">'+esc(ACC[t.accountId].kasaName)+(t.description?' · '+esc(t.description):'')+'</span></span><span class="am num"><span class="n" style="display:block">'+fNat(a.source==='xero'?t.amount:-t.amount)+'<span class="ccy">'+t.ccy+'</span></span></span></button>'}).join('');
+  else if(x.told)tx=Object.keys(x.told).sort().filter(function(m){return x.told[m]}).map(function(m){return '<div class="dr"><span class="dt num">'+mLabel(m)+'</span><span><span class="d1" style="display:block">'+(x.told[m]>0?'Money added':'Money taken out')+'</span><span class="d2" style="display:block">Figure you gave us</span></span><span class="am num"><span class="n">'+fNat(x.told[m])+'<span class="ccy">'+a.ccy+'</span></span></span></div>'}).join('')||'<div class="empty">No money added or taken out.</div>';
+  else tx='<div class="empty">'+(x.still?'Held at the price you paid. Give us a new value and growth will show here.':x.known?'No money added or taken out.':'This value comes from your own Kasa figures, so there are no transactions behind it. Tell us what you added or withdrew and it will show here.')+'</div>';
+  return head('Investments',esc(a.kasaName),x.still?'Held at cost':x.stale?'No new figure since '+mEnd(x.stale):((a.source==='manual'?'Your figure':'From statements')+' · '+mEnd(x.k1)))+'</div><div class="sh-b fund">'+kpi+
+    (x.still?'':'<h2>Value against money put in</h2>'+invChart(x,pace))+
+    '<h2>Month by month · USD</h2><div class="tw"><table class="k"><thead><tr><th>Month</th><th>Value</th><th>Money added</th><th>Growth</th><th>Growth %</th></tr></thead><tbody>'+mrows+'</tbody></table></div>'+
+    (!x.known?'<p class="note" style="margin-top:10px">We do not have your money-added figures for this holding yet, so growth assumes none.</p>':'')+
+    '<h2>Transactions on this holding</h2><div class="fund-tx">'+tx+'</div><div style="height:24px"></div></div>';
+}
 
 /* ---------- Statements ---------- */
 function pStatements(){
@@ -717,6 +750,8 @@ function renderSheet(){
     sh.innerHTML=vDetail(v.id);
     var row=sh.querySelector('.kr-row'),hit=sh.querySelector('.kr-row .hit');
     if(row&&hit)row.scrollLeft=Math.max(0,hit.offsetLeft-160);
+  }else if(v.type==='fund'){
+    sh.innerHTML=vFund(v.id);
   }else if(v.type==='accountant'){
     sh.innerHTML=vAccountant();
   }
@@ -801,19 +836,28 @@ function download(){
 }
 
 /* ---------- PIN ---------- */
+var LOCKED=false,SEEN=Date.now();
+function touchSeen(force){var n=Date.now();if(LOCKED)return;if(force||n-SEEN>5000){try{localStorage.setItem(CONFIG.seenKey,String(n))}catch(e){}}SEEN=n}
+function idleFor(){var s=SEEN;try{s=Math.max(s,+localStorage.getItem(CONFIG.seenKey)||0)}catch(e){}return Date.now()-s}
+function checkLock(){if(DEMO||LOCKED)return;if(Date.now()-SEEN>CONFIG.lockAfterMin*60000)showPin()}
+['pointerdown','keydown','scroll','touchstart','wheel'].forEach(function(ev){window.addEventListener(ev,function(){touchSeen()},{passive:true,capture:true})});
+setInterval(checkLock,20000);
+document.addEventListener('visibilitychange',function(){if(!document.hidden)checkLock()});
+window.addEventListener('pageshow',checkLock);
 function showPin(){
+  if(LOCKED)return;LOCKED=true;
   var entered='',el=$('#pin');
   var draw=function(err){
     el.innerHTML='<div class="pin" role="dialog" aria-label="Enter PIN"><div class="pin-in"><div class="mark">KASA</div><span class="mark-who" style="margin-top:12px">Bibi Brzozka</span>'+
       '<div class="pin-msg">Enter your PIN</div><div class="dots">'+[0,1,2,3].map(function(i){return '<i class="'+(i<entered.length?'on':'')+'"></i>'}).join('')+'</div>'+
       '<div class="pin-err" role="alert">'+(err||'')+'</div><div class="pad">'+[1,2,3,4,5,6,7,8,9].map(function(n){return '<button data-k="'+n+'">'+n+'</button>'}).join('')+
-      '<span></span><button data-k="0">0</button><button class="txt" data-k="del">Delete</button></div><p class="pin-note">Asked once. Kasa remembers this device.</p></div></div>';
+      '<span></span><button data-k="0">0</button><button class="txt" data-k="del">Delete</button></div><p class="pin-note">Kasa locks after '+CONFIG.lockAfterMin+' minutes without use.</p></div></div>';
   };
   var press=function(k){
     if(k==='del'){entered=entered.slice(0,-1);return draw()}
     if(entered.length>=4)return;entered+=k;draw();
     if(entered.length===4)setTimeout(function(){
-      if(entered===CONFIG.pin){if(!DEMO)localStorage.setItem(CONFIG.deviceKey,'ok');el.innerHTML='';document.removeEventListener('keydown',kd)}
+      if(entered===CONFIG.pin){if(!DEMO)localStorage.setItem(CONFIG.deviceKey,'ok');el.innerHTML='';el.onclick=null;document.removeEventListener('keydown',kd);LOCKED=false;touchSeen(true)}
       else{entered='';draw('That PIN didn’t match. Try again.')}
     },120);
   };
@@ -876,7 +920,8 @@ load().then(function(data){
   }else if(o==='drill'){
     drill('Total income',mLong(BM)+' · US LLC',TX.filter(function(x){return x.scope==='business'&&x.amount>0&&x._m===BM}));
   }else if(o==='accountant'){S.stack=[{type:'accountant'}];openSheet()}
-  if(Q.get('pin')==='1'||(!DEMO&&localStorage.getItem(CONFIG.deviceKey)!=='ok'))showPin();
+  var away=0;try{away=Date.now()-(+localStorage.getItem(CONFIG.seenKey)||0)}catch(e){away=Infinity}
+  if(Q.get('pin')==='1'||(!DEMO&&(localStorage.getItem(CONFIG.deviceKey)!=='ok'||away>CONFIG.lockAfterMin*60000)))showPin();else touchSeen(true);
 });
 })();
 </script>
